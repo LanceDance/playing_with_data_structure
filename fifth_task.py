@@ -62,7 +62,6 @@ dict_with_dates_and_ids = create_sorted_dict_by_id(logs)
 # main logic of the loop, where I wanna find max and min date and save to dicts
 for key, item in dict_with_dates_and_ids.items():
     v = []
-    year = 0
     for i in item:
         a = i.split('-')[1]
         v.append(int(a))
