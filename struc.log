@@ -2,4 +2,4 @@ s3://my-bucket/xxx/yyy/zzz/abc/id=123/month=2019-01-01/123e4567-e89b-12d3-a456-4
 s3://my-bucket/xxx/yyy/zzz/abc/id=123/month=2019-02-01/17262567-3423-2453-ac22-434524474000.ndjson.gz
 s3://my-bucket/xxx/yyy/zzz/abc/id=333/month=2019-03-01/99e46ea2-f65a-6573-ea43-166536673900.ndjson.gz
 s3://my-bucket/xxx/yyy/zzz/def/id=123/month=2019-10-01/81672aa2-abcd-a456-3cc3-625627373900.ndjson.gz
-s3://my-bucket/xxx/yyy/zzz/def/id=333/month=2018-11-01/86002333-cccd-715b-57aa-726238199139.ndjson.gz
+s3://my-bucket/xxx/yyy/zzz/def/id=333/month=2017-11-01/86002333-cccd-715b-57aa-726238199139.ndjson.gz

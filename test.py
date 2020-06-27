@@ -7,15 +7,16 @@ TEST_STRING = "h3110 23 cat rabbit 11 2 dog eng.json efv.csv , 2019-05-27 23"
 LIST_OF_LISTS = [[1, 2, 3, 4, 8], [1, 2, 3, 5, 8, 13], [2, 4, 6, 8], [0, 2, 5, 8, 10]]
 LOG = ['s3://my-bucket/xxx/yyy/zzz/def/id=333/month=2019-11-01/86002333-cccd-715b-57aa-726238199139.ndjson.gz']
 
+
 class TestTasks(unittest.TestCase):
     def test_aswer(self):
         assert find_intersection(LIST_OF_LISTS) == {2, 8}
         assert find_intersection([]) is None
 
     def test_generator_positive(self):
-        gen = generator(TEST_STRING)
+        inst = find_in_generator()
         geen_empty_string = generator('')
-        self.assertIn('eng.json',gen)
+        self.assertIn('eng.json',inst)
         self.assertNotIn('eng.json', geen_empty_string)
 
     def test_count_logs(self):
@@ -32,8 +33,7 @@ class TestFifthTask(unittest.TestCase):
     def test_yields(self):
         yields = get_all_keys('struc.log')
         for i in yields:
-            print(i)
-            self.assertIn('s3://',i)
+            self.assertIn('s3://', i)
 
     def test_parsed_date(self):
         dates = get_dates(LOG)

@@ -46,7 +46,7 @@ def dict_to_json(dict_of_dicts: 'data structure dict', name_of_export_file: 'nam
             json.dump(dict_of_dicts, fp)
     except IOError:
         print('cannot save file')
-        return 0
+        raise IOError('ERROR')
 
 
 # create empty dict for max month, min month and missing months
@@ -58,6 +58,7 @@ missing_months = {}
 # upload logs
 logs = get_all_keys('struc.log')
 
+# save the ids and dates to dict
 dict_with_dates_and_ids = create_sorted_dict_by_id(logs)
 
 
@@ -72,8 +73,9 @@ for key, item in dict_with_dates_and_ids.items():
     max_month_dict.update({key: {'max': str(max_month)}})
     min_month_dict.update({key: {'min': str(min_month)}})
 
-di = create_last_dict(dict_with_dates_and_ids)
 
-dict_to_json(di, 'result.json')
+main_dict = create_last_dict(dict_with_dates_and_ids)
+print(main_dict)
+dict_to_json(main_dict, 'result.json')
 
 
