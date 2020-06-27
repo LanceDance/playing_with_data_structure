@@ -29,19 +29,20 @@ def check_memory():
 
 
 # 2nd task
-def find_in_generator():
-    # (int(s) for s in str.split() if s.isdigit())
 
-    string_to_set = set(generator().split(" "))
-    numb = list((filter(lambda x: x.isdigit(), string_to_set)))
-    json = list(filter(lambda x: '.json' in x or '.csv' in x ,string_to_set))
-    date = list(filter(lambda x: re.search(r'\d{4}-\d{2}-\d{2}', x), string_to_set))
-    result = numb + json + date
-    return result
-
-
-def generator(string='h3110 23 cat rabbit 11 2 dog eng.json efv.csv , 2019-05-27 23'):
+# pseudogenerator of string
+def generator_of_strings(string='h3110 23 cat rabbit 11 2 dog eng.json efv.csv , 2019-05-27 23'):
     return string
+
+
+# we can call every time generator_of_string, but I think it is better to call one, store to memory and than use it.
+# it will be better if text (string) is longer, so we won't create in every lambda function.
+string = set(generator_of_strings().split(' '))
+numb = list((filter(lambda x: x.isdigit(), string)))
+json = list(filter(lambda x: '.json' in x or '.csv' in x ,string))
+date = list(filter(lambda x: re.search(r'\d{4}-\d{2}-\d{2}', x), string))
+
+
 ########################################################
 
 

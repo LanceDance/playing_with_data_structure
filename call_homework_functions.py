@@ -6,6 +6,8 @@ print(find_intersection([[1, 2, 3, 4, 8], [1, 2, 3, 5, 8, 13], [2, 4, 6, 8], [0,
 
 print(count_logs('web.log'))
 
-print(find_in_generator())
+print(numb)
+print(json)
+print(date)
 
 
