@@ -1,6 +1,8 @@
+import datetime
 import json
 from collections import defaultdict
 from tasks import open_file
+from dateutil.rrule import rrule, MONTHLY
 
 
 # get the file and return yield
@@ -61,27 +63,14 @@ dict_with_dates_and_ids = create_sorted_dict_by_id(logs)
 
 # main logic of the loop, where I wanna find max and min date and save to dicts
 for key, item in dict_with_dates_and_ids.items():
-    v = []
-    for i in item:
-        a = i.split('-')[1]
-        v.append(int(a))
-        year = i.split('-')[0]
-    min_month = min(item)
-    maxi_month = max(item)
-    missing_dates = []
-    for x in range(min(v), max(v)):
-        if x <= 9:
-            num = '-0'
-        else:
-            num = '-'
-        if x in v:
-            pass
-        else:
-            created_date = f"{year}{num}{x}-01"
-            missing_dates.append(created_date)
-            missing_months.update({key: {'missing months': missing_dates}})
-    max_month_dict.update({key: {'max': maxi_month}})
-    min_month_dict.update({key: {'min': min_month}})
+    min_month = datetime.datetime.strptime(min(item), '%Y-%m-%d').date()
+    max_month = datetime.datetime.strptime(max(item), '%Y-%m-%d').date()
+    dates = [f'{dt:%Y-%m-%d}' for dt in rrule(MONTHLY, dtstart=min_month, until=max_month)]
+    dates.remove((str(min_month))) if str(min_month) in dates else None
+    dates.remove((str(max_month))) if str(max_month) in dates else None
+    missing_months.update({key: {'missing months': dates}})
+    max_month_dict.update({key: {'max': str(max_month)}})
+    min_month_dict.update({key: {'min': str(min_month)}})
 
 di = create_last_dict(dict_with_dates_and_ids)
 

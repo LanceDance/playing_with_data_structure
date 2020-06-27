@@ -43,4 +43,3 @@ class TestFifthTask(unittest.TestCase):
         inst = create_sorted_dict_by_id(LOG)
         self.assertIn('333', inst)
 
-    
