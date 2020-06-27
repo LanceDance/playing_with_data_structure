@@ -56,7 +56,7 @@ missing_months = {}
 
 
 # upload logs
-logs = get_all_keys('struc.log')
+logs = get_all_keys('./attachements/struc.log')
 
 # save the ids and dates to dict
 dict_with_dates_and_ids = create_sorted_dict_by_id(logs)
@@ -75,7 +75,6 @@ for key, item in dict_with_dates_and_ids.items():
 
 
 main_dict = create_last_dict(dict_with_dates_and_ids)
-print(main_dict)
-dict_to_json(main_dict, 'result.json')
+dict_to_json(main_dict, './attachements/result.json')
 
 

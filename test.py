@@ -13,7 +13,7 @@ class TestTasks(unittest.TestCase):
         assert find_intersection([]) is None
 
     def test_count_logs(self):
-        file = count_logs('web.log')
+        file = count_logs('./attachements/web.log')
         self.assertIn('GET',file)
 
     def test_open_file(self):
@@ -24,7 +24,7 @@ class TestTasks(unittest.TestCase):
 
 class TestFifthTask(unittest.TestCase):
     def test_yields(self):
-        yields = get_all_keys('struc.log')
+        yields = get_all_keys('./attachements/struc.log')
         for i in yields:
             self.assertIn('s3://', i)
 

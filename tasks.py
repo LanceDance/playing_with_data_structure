@@ -21,7 +21,7 @@ def open_file(file):
 
 def check_memory():
     tracemalloc.start()
-    open_file('web.log')
+    open_file('./attachements/web.log')
     current, peak = tracemalloc.get_traced_memory()
     result = f"Current memory usage is {current / 10**6}MB"
     tracemalloc.stop()
@@ -39,7 +39,7 @@ def generator_of_strings(string='h3110 23 cat rabbit 11 2 dog eng.json efv.csv ,
 # it will be better if text (string) is longer, so we won't create in every lambda function.
 string = set(generator_of_strings().split(' '))
 numb = list((filter(lambda x: x.isdigit(), string)))
-json = list(filter(lambda x: '.json' in x or '.csv' in x ,string))
+json_or_csv = list(filter(lambda x: '.json' in x or '.csv' in x, string))
 date = list(filter(lambda x: re.search(r'\d{4}-\d{2}-\d{2}', x), string))
 
 
@@ -74,8 +74,8 @@ def count_logs(file):
 # I tried to create algorithm in that way, that it doesnt matter if logs are sorted or not
 # I copied/pasted twice the example of logs to web.log file
 #
-# 4.c I just can think of some log tools for example splunk or Vsphere, where you can play with some filters or write in
-# other language :)
+# 4.c I just can think of some log tools for example splunk or Vsphere.  I think even in Kafka or Celery you should be
+# able to create queoe with some parameters and filters
 
 #######################################################
 
