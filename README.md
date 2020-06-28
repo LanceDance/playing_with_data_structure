@@ -1,5 +1,9 @@
 # Homework
 
+installation: 
+pip install -r requirements.txt
+
+
 there are two parts: 
 First is 1-4 tasks and last one is the 5th task.
 in test.py there is couple of tests 
