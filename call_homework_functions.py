@@ -1,13 +1,16 @@
 from tasks import *
+sign_print = ('*' * 30)
+print(sign_print)
 print(check_memory())
-
+print(sign_print)
 print(find_intersection([[1, 2, 3, 4, 8], [1, 2, 3, 5, 8, 13], [2, 4, 6, 8], [0, 2, 5, 8, 10]]))
-
-
+print(sign_print)
 print(count_logs('./attachements/web.log'))
-
+print(sign_print)
 print(numb)
+print(sign_print)
 print(json_or_csv)
+print(sign_print)
 print(date)
-
+print(sign_print)
 

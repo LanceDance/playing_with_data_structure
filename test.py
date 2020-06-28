@@ -5,6 +5,7 @@ from fifth_task import *
 
 LIST_OF_LISTS = [[1, 2, 3, 4, 8], [1, 2, 3, 5, 8, 13], [2, 4, 6, 8], [0, 2, 5, 8, 10]]
 LOG = ['s3://my-bucket/xxx/yyy/zzz/def/id=333/month=2019-11-01/86002333-cccd-715b-57aa-726238199139.ndjson.gz']
+FIRST_DICT = {'123': ['2019-01-01', '2019-02-01', '2019-10-01'], '333': ['2019-03-01', '2017-11-01']}
 
 
 class TestTasks(unittest.TestCase):
@@ -36,3 +37,6 @@ class TestFifthTask(unittest.TestCase):
         inst = create_sorted_dict_by_id(LOG)
         self.assertIn('333', inst)
 
+    def test_main_dict(self):
+        inst = create_final_dict(FIRST_DICT)
+        self.assertIn('123', inst)
