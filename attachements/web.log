@@ -13,4 +13,4 @@ fcrawler.looksmart.com - - [01/Feb/2001:00:17:19 -0400] "GET /news/news.html HTT
 fcrawler.looksmart.com - - [26/Dec/2001:00:17:19 -0400] "GET /news/news.html HTTP/1.0" 200 16716 "-" "FAST-WebCrawler/2.1-pre2"
 fcrawler.looksmart.com - - [04/Jun/2013:00:17:19 -0400] "GET /news/news.html HTTP/1.0" 200 16716 "-" "FAST-WebCrawler/2.1-pre2"
 fcrawler.looksmart.com - - [13/Jun/2012:00:17:19 -0400] "GET /news/news.html HTTP/1.0" 200 16716 "-" "FAST-WebCrawler/2.1-pre2"
-fcrawler.looksmart.com - - [02/Sep/2011:00:17:19 -0400] "GET /news/news.html HTTP/1.0" 200 16716 "-" "FAST-WebCrawler/2.1-pre2"
+fcrawler.looksmart.com - - [02/Sep/2011:00:17:19 -0400] "POST /news/news.html HTTP/1.0" 200 16716 "-" "FAST-WebCrawler/2.1-pre2"
