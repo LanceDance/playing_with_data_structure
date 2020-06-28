@@ -48,8 +48,7 @@ date = list(filter(lambda x: re.search(r'\d{4}-\d{2}-\d{2}', x), string))
 
 # 3th task
 def find_intersection(d):
-    if d:
-        return set(d[0]).intersection(*d)
+        return set(d[0]).intersection(*d) if d else print('List is empty')
 
 ########################################################
 
